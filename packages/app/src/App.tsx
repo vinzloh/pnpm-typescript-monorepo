@@ -1,11 +1,11 @@
 import * as React from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import { Button } from "@vinz/web-ui";
 
 function App() {
   React.useEffect(() => {
-    fetch("/api/notion")
-      // fetch("https://jsonplaceholder.typicode.com/todos/1")
+    fetch("https://jsonplaceholder.typicode.com/todos/1")
       .then((r) => r.json())
       .then((res) => {
         console.log(`res:`, res);
@@ -16,10 +16,11 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>aaa Hello Vite + React...</p>
+        <p>Hello Vite + React...</p>
         <p>
           Edit <code>App.tsx</code> and save to test HMR updates.
         </p>
+        <Button variant="green">click me</Button>
         <p>
           <a
             className="App-link"

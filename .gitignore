@@ -1,7 +1,17 @@
 node_modules
 .DS_Store
+
+lib
 dist
 dist-ssr
+coverage
+.env
 *.local
+*error.log
+*debug.log
 
 .vercel
+
+.pnpm-store
+.npmrc
+tsconfig.tsbuildinfo

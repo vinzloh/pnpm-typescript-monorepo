@@ -1,24 +1,56 @@
 lockfileVersion: 5.3
 
-specifiers:
-  '@types/react': ^17.0.0
-  '@types/react-dom': ^17.0.0
-  '@vitejs/plugin-react': ^1.0.0
-  react: ^17.0.0
-  react-dom: ^17.0.0
-  typescript: ^4.3.2
-  vite: ^2.5.4
+importers:
 
-dependencies:
-  react: 17.0.2
-  react-dom: 17.0.2_react@17.0.2
+  .:
+    specifiers:
+      husky: ^6.0.0
+    devDependencies:
+      husky: 6.0.0
 
-devDependencies:
-  '@types/react': 17.0.24
-  '@types/react-dom': 17.0.9
-  '@vitejs/plugin-react': 1.0.1
-  typescript: 4.4.3
-  vite: 2.5.10
+  packages/app:
+    specifiers:
+      '@types/react': ^17.0.0
+      '@types/react-dom': ^17.0.0
+      '@vinz/web-ui': workspace:*
+      '@vitejs/plugin-react': ^1.0.0
+      react: ^17.0.0
+      react-dom: ^17.0.0
+      typescript: ^4.3.2
+      vite: ^2.5.4
+    dependencies:
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
+    devDependencies:
+      '@types/react': 17.0.24
+      '@types/react-dom': 17.0.9
+      '@vinz/web-ui': link:../web-ui
+      '@vitejs/plugin-react': 1.0.1
+      typescript: 4.4.3
+      vite: 2.5.10
+
+  packages/web-ui:
+    specifiers:
+      '@radix-ui/colors': ^0.1.7
+      '@stitches/react': ^1.2.1
+      '@types/react': ^17.0.0
+      '@types/react-dom': ^17.0.0
+      '@vitejs/plugin-react': ^1.0.0
+      react: ^17.0.0
+      react-dom: ^17.0.0
+      typescript: ^4.3.2
+      vite: ^2.5.4
+    dependencies:
+      '@radix-ui/colors': 0.1.7
+      '@stitches/react': 1.2.1_react@17.0.2
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
+    devDependencies:
+      '@types/react': 17.0.24
+      '@types/react-dom': 17.0.9
+      '@vitejs/plugin-react': 1.0.1
+      typescript: 4.4.3
+      vite: 2.5.10
 
 packages:
 
@@ -301,6 +333,10 @@ packages:
       to-fast-properties: 2.0.0
     dev: true
 
+  /@radix-ui/colors/0.1.7:
+    resolution: {integrity: sha512-E6+ZPQ+FFn1/NZ4c/KRvZTu9KjC/MXrbJNETYs1HKe96gyxQivPu65FkhOsRnPigvJ0YJ9ZxYGxayqDNmaC1cQ==}
+    dev: false
+
   /@rollup/pluginutils/4.1.1:
     resolution: {integrity: sha512-clDjivHqWGXi7u+0d2r2sBi4Ie6VLEAzWMIkvJLnDmxoOhBYOTfzGbOQBA32THHm11/LiJbd01tJUpJsbshSWQ==}
     engines: {node: '>= 8.0.0'}
@@ -308,6 +344,14 @@ packages:
       estree-walker: 2.0.2
       picomatch: 2.3.0
     dev: true
+
+  /@stitches/react/1.2.1_react@17.0.2:
+    resolution: {integrity: sha512-xVnYuU3ZwvI4ghdM5r21hCb4eejkTZQqxm3q5iRTBnrbiG/8jpbEWTi8gXXjZ9X4+PssjuqBrjvPSqAcPvya6w==}
+    peerDependencies:
+      react: '>= 16.3.0'
+    dependencies:
+      react: 17.0.2
+    dev: false
 
   /@types/prop-types/15.7.4:
     resolution: {integrity: sha512-rZ5drC/jWjrArrS8BR6SIr4cWpW09RNTYt9AMZo3Jwwif+iacXAqgVjm0B0Bv/S1jhDXKHqRVNCbACkJ89RAnQ==}
@@ -471,6 +515,11 @@ packages:
       function-bind: 1.1.1
     dev: true
 
+  /husky/6.0.0:
+    resolution: {integrity: sha512-SQS2gDTB7tBN486QSoKPKQItZw97BMOd+Kdb6ghfpBc0yXyzrddI0oDV5MkDAbuB4X2mO3/nj60TRMcYxwzZeQ==}
+    hasBin: true
+    dev: true
+
   /is-core-module/2.6.0:
     resolution: {integrity: sha512-wShG8vs60jKfPWpF2KZRaAtvt3a20OAn7+IJ6hLPECpSABLcKtFKTTI4ZtH5QcBruBHlq+WsdHWyz0BCZW7svQ==}
     dependencies:
@@ -513,12 +562,12 @@ packages:
     resolution: {integrity: sha512-2nMHqg1x5PU+unxX7PGY7AuYxl2qDx7PSrTRjizr8sxdd3l/3hBuWWaki62qmtYm2U5i4Z5E7GbjlyDFhs9/EQ==}
     dev: true
 
-  /nanocolors/0.2.6:
-    resolution: {integrity: sha512-lP8hjPSXTQ7qpYl5hFPVTBXGdd7+Rn3oi8GqIPNZP63L09tewRzWYFxAy26B1BYOOYaPWgmVF/BFIhDAHihwUQ==}
+  /nanocolors/0.2.8:
+    resolution: {integrity: sha512-lFtwopLYUwJ/w+VcBib+Ti1J+USzc/m2XN9LCCl/AhibkzYlXk6FHeqkJqBWRd70RpjArGWYZQjwa6UgwYycBA==}
     dev: true
 
-  /nanoid/3.1.25:
-    resolution: {integrity: sha512-rdwtIXaXCLFAQbnfqDRnI6jaRHp9fTcYBjtFKE8eezcZ7LuLjhUaQGNeMXf1HmRoCH32CLz6XwX0TtxEOS/A3Q==}
+  /nanoid/3.1.28:
+    resolution: {integrity: sha512-gSu9VZ2HtmoKYe/lmyPFES5nknFrHa+/DT9muUFWFMi6Jh9E1I7bkvlQ8xxf1Kos9pi9o8lBnIOkatMhKX/YUw==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
     dev: true
@@ -545,8 +594,8 @@ packages:
     resolution: {integrity: sha512-GT5bTjjZnwDifajzczOC+r3FI3Cu+PgPvrsjhQdRqa2kTJ4968/X9CUce9xttIB0xOs5c6xf0TCWZo/y9lF6bA==}
     engines: {node: ^10 || ^12 || >=14}
     dependencies:
-      nanocolors: 0.2.6
-      nanoid: 3.1.25
+      nanocolors: 0.2.8
+      nanoid: 3.1.28
       source-map-js: 0.6.2
     dev: true
 

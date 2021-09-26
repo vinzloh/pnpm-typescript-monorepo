@@ -1,21 +1,13 @@
 {
-  "name": "e-viz",
+  "name": "pnpm-typescript-monorepo",
   "version": "0.0.0",
+  "description": "",
   "scripts": {
-    "dev": "vite",
-    "dev:vercel": "vite --port $PORT",
-    "build": "tsc && vite build",
-    "serve": "vite preview"
+    "postinstall": "tsc --build --verbose"
   },
-  "dependencies": {
-    "react": "^17.0.0",
-    "react-dom": "^17.0.0"
-  },
+  "author": "",
+  "license": "ISC",
   "devDependencies": {
-    "@types/react": "^17.0.0",
-    "@types/react-dom": "^17.0.0",
-    "@vitejs/plugin-react": "^1.0.0",
-    "typescript": "^4.3.2",
-    "vite": "^2.5.4"
+    "husky": "^6.0.0"
   }
 }
